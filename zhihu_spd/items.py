@@ -8,7 +8,26 @@
 import scrapy
 
 
-class ZhihuSpdItem(scrapy.Item):
+class ZhihuUserItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+
+    locations = scrapy.Field()
+    employments = scrapy.Field()
+    gender = scrapy.Field()
+    educations = scrapy.Field()
+    business = scrapy.Field()
+    description = scrapy.Field()
+    voteup_count = scrapy.Field()
+    thanked_count = scrapy.Field()
+    follower_count = scrapy.Field()
+    following_count = scrapy.Field()
+    answer_count = scrapy.Field()
+    articles_count = scrapy.Field()
+    favorited_count = scrapy.Field()
+
+    url_token = scrapy.Field()
+    name = scrapy.Field()
+    user_type = scrapy.Field()
+    headline = scrapy.Field()
+    avatar_url = scrapy.Field()

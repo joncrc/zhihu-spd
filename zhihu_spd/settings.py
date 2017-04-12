@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'zhihu_spd.spiders'
 #USER_AGENT = 'zhihu_spd (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -34,6 +34,7 @@ ROBOTSTXT_OBEY = True
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
+COOKIES_DEBUG = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -43,6 +44,16 @@ ROBOTSTXT_OBEY = True
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
 #}
+DEFAULT_REQUEST_HEADERS = {'Accept': '*/*',
+                           'Accept-Encoding': 'gzip, deflate, br',
+                           'Accept-Language': 'en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4',
+                           'Connection': 'keep-alive',
+                           'Host': 'www.zhihu.com',
+                           'Origin': 'https://www.zhihu.com',
+                           'Referer': 'https://www.zhihu.com/',
+                           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 '
+                                         '(KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                           }
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
