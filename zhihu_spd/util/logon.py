@@ -139,7 +139,7 @@ def test_sess_cookies(session):
 # print(test_sess_cookies(sess))
 
 # Test session with get_logon_sess()
-print(test_sess_cookies(get_logon_sess()))
+# print(test_sess_cookies(get_logon_sess()))
 
 # Test session with get_logon_cookies()
 # sess.cookies.update(get_logon_cookies())
