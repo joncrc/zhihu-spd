@@ -56,8 +56,13 @@ def load_cookies(session, filename=cookies_filename):
         session.cookies.update(cookies)
 
 
-def logon(username, pwd):
+def logon(username="", pwd=""):
     # Logon and save cookies in dict format
+
+    if len(username) == 0:
+        username = input('Please input the username： ')
+    if len(pwd) == 0:
+        pwd = input('Please input the password： ')
 
     # Get the xsrf value
     r = sess.get(zhihu_url, headers=req_header, verify=True)
@@ -134,7 +139,7 @@ def test_sess_cookies(session):
 # print(test_sess_cookies(sess))
 
 # Test session with get_logon_sess()
-# print(test_sess_cookies(get_logon_sess()))
+print(test_sess_cookies(get_logon_sess()))
 
 # Test session with get_logon_cookies()
 # sess.cookies.update(get_logon_cookies())
