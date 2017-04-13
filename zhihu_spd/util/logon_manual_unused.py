@@ -71,23 +71,23 @@ def logon(username, pwd):
 
     r = sess.post(zhihu_url + login_type_url, data=form_data, headers=req_header, verify=True)
     j = r.json()  # j is a dict format
-    # print(j)
+    #print(j)
     c = int(j["r"])
     print(j["msg"])
 
     if c == 0:
         print("Logon successfully.")
         sess.cookies.save(ignore_discard=True, ignore_expires=True)
-        print("Save cookie successfully.")
+        print("Save cookies successfully.")
     else:
         print("Logon failed.")
 
 
-def sess_logon(username=None, pwd=None):
+def get_logon_sess(username="", pwd=""):
     # Return session with cookie
 
     # Load cookie
-    cookie_filename = 'cookie'
+    cookie_filename = 'saved_cookies'
     sess.cookies = http.cookiejar.LWPCookieJar(cookie_filename)
     # LWPCookieJar is a sub class of FileCookieJar. Save the cookie as Set-Cookie3 format.
     # Another option is to use MozillaCookieJar. Save as .txt format.
@@ -108,3 +108,10 @@ def sess_logon(username=None, pwd=None):
 
     return sess
 
+
+def get_logon_cookie(username="", pwd=""):
+    # Return cookie
+
+    cookies = get_logon_sess(username, pwd).cookies
+
+    return cookies
