@@ -127,7 +127,7 @@ def get_logon_cookies(username="", pwd=""):
 
 
 def test_sess_cookies(session):
-    # Test logon to verfiy the session has valid cookies
+    # Test logon to verify the session has valid cookies
     get_url = 'https://www.zhihu.com/settings/profile'
     resp_code = session.get(get_url, headers=req_header, allow_redirects=False).status_code
     if resp_code == 200:
