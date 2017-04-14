@@ -11,7 +11,6 @@ class ZhihuUser(scrapy.Spider):
 
     start_user = "jon-chen"
 
-
     # User info URL
     userinfo_url = 'https://www.zhihu.com/api/v4/members/{user}?include={include}'
     # User info's include parm
